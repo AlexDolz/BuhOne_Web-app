@@ -804,7 +804,7 @@ figure {
   }
   .triggers__container2 {
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
   }
 }
 
@@ -901,7 +901,10 @@ figure {
   }
   .triggers__container3 {
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
+  }
+  .reviews__texts {
+    margin-bottom: 0;
   }
 }
 
