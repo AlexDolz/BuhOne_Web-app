@@ -159,6 +159,8 @@ body {
   color: white;
   padding: 50px 0 15px 0;
   z-index: 10;
+  animation-name: modal-div;
+  animation-duration: 0.5s;
 }
 @media screen and (max-width: 992px) {
   .nav {
@@ -1230,5 +1232,29 @@ figure {
   .footer__text {
     font-size: 10px;
     line-height: 16px;
+  }
+}
+
+@keyframes modal-div {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.modal__closing {
+  animation-name: modal-closing;
+  animation-duration: 0.5s;
+}
+
+@keyframes modal-closing {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
   }
 }

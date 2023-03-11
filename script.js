@@ -43,23 +43,36 @@ function openMenu() {
     contacsModal.addEventListener('click', () =>
       sections[4].scrollIntoView({ behavior: 'smooth', block: 'start' })
     );
-  } else {
-    const [spanELem1, spanELem2, spanELem3] =
-      document.querySelectorAll('.line');
-    spanELem1.style.position = 'static';
-    spanELem1.style.transform = 'none';
-    spanELem2.style.position = 'static';
-    spanELem2.style.transform = 'none';
-    spanELem3.style.position = 'static';
-    spanELem3.style.transform = 'none';
-    burgerMenu.style.height = '43px';
-    const modal = document.querySelector('.modal');
-
-    modal.remove();
   }
   setModal = !setModal;
 }
-burgerMenu.addEventListener('click', openMenu);
+
+function closeMenu() {
+  const [spanELem1, spanELem2, spanELem3] = document.querySelectorAll('.line');
+  spanELem1.style.position = 'static';
+  spanELem1.style.transform = 'none';
+  spanELem2.style.position = 'static';
+  spanELem2.style.transform = 'none';
+  spanELem3.style.position = 'static';
+  spanELem3.style.transform = 'none';
+  burgerMenu.style.height = '43px';
+  const modal = document.querySelector('.modal');
+  modal.classList.add('modal__closing');
+  if (modal) {
+    setTimeout(() => {
+      modal.remove();
+    }, 450);
+  }
+  setModal = false;
+}
+
+burgerMenu.addEventListener('click', () => {
+  if (setModal) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
 
 // ********************** Auto scroll ***********************************
 
