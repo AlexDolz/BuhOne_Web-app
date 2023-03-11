@@ -366,9 +366,9 @@ body {
   }
 
   .triggers__container {
-    max-width: 262px;
+    max-width: 270px;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
   }
   .header__container {
     left: 68px;
